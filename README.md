@@ -1,8 +1,9 @@
 # ResQAdam: Residual-Preserving Adaptive Optimization for Memory-Efficient Quantization-Aware Training
 
-ResQAdam is a memory-efficient optimizer for quantization-aware training (QAT) of LLMs.
-It reduces optimizer-state memory by 71% to 74% relative to AdamW, stays close to AdamW in accuracy, and lowers training throughput by less than 2%.
-See the paper for the method.
+This repository contains a reference torch implementation of the ResQAdam optimizer and the code for reproducing the experiments in the paper: [ResQAdam: Residual-Preserving Adaptive Optimization for Memory-Efficient Quantization-Aware Training]()
+
+**Abstract**: Quantization-aware training (QAT) is the most reliable way to obtain accurate low-bit large language models (LLMs), but training with AdamW keeps two dense FP32 states for every weight matrix. We find that low-rank memory-efficient optimizers such as GaLore and LDAdam degrade substantially in QAT. A considerable part of the QAT momentum lies outside its top-$r$ singular subspace, and projection-based methods discard this part at every step. We further observe that this residual remains useful when only its sign is kept. Based on these observations, we propose ResQAdam. It keeps a single BF16 momentum, applies Adam only to the $r\times r$ coordinates of the principal subspace, and adds a normalized sign update computed from the residual. We evaluate ResQAdam with two from-scratch QAT methods and three QAT fine-tuning pipelines, with weights quantized down to 2 bits. It reduces optimizer-state memory by 71% to 74% relative to AdamW, stays close to AdamW in most settings, and lowers training throughput by less than 2%.
+
 
 <p align="center"><img src="assets/memory_vs_ppl.png" width="65%"></p>
 
