@@ -8,7 +8,7 @@ See the paper for the method.
 
 ## Environment
 
-The code is tested with Python 3.10, CUDA 12.8 and PyTorch 2.9.0 on NVIDIA H200 GPUs.
+The code is tested with Python 3.10, CUDA 12.8 and PyTorch 2.9.0.
 
 ```bash
 conda create -n resqadam python=3.10 -y
