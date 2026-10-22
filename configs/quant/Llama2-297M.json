@@ -1,0 +1,30 @@
+{
+  "architectures": [
+    "QuantLlamaForCausalLM"
+  ],
+  "w_bits": null,
+  "a_bits": null,
+  "group_size": null,
+  "qtype": null,
+  "round_type": "ste",
+  "round_param": null,
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "hidden_act": "silu",
+  "hidden_size": 1536,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "max_position_embeddings": 2048,
+  "model_type": "llama",
+  "num_attention_heads": 24,
+  "num_hidden_layers": 12,
+  "num_key_value_heads": 6,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "tie_word_embeddings": true,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.31.0.dev0",
+  "use_cache": true,
+  "vocab_size": 32000
+}
